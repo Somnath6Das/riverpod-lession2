@@ -5,6 +5,15 @@ final counterProvider = StateNotifierProvider<Counter, int>((ref) {
   return Counter();
 });
 
+class Counter extends StateNotifier<int> {
+  Counter() : super(0);
+  increment() {
+    //  state = 20;
+    state += 20;
+    // state++;
+  }
+}
+
 class StateNotifier1 extends ConsumerWidget {
   const StateNotifier1({super.key});
 
@@ -38,18 +47,10 @@ class StateNotifier1 extends ConsumerWidget {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          ref.read(counterProvider.notifier).increament();
+          ref.read(counterProvider.notifier).increment();
         },
         child: const Icon(Icons.add),
       ),
     );
-  }
-}
-
-class Counter extends StateNotifier<int> {
-  Counter() : super(0);
-  void increament() {
-    state += 20;
-    // state++;
   }
 }
