@@ -1,0 +1,7 @@
+{
+    "data": [
+      { "name": "Black", "age": 22, "avatar": "https://cdn-icons-png.flaticon.com/512/4137/4137490.png"},
+      { "name": "Milan", "age": 26, "avatar": "https://cdn-icons-png.flaticon.com/512/3006/3006876.png" },
+      { "name": "Jiya", "age": 24, "avatar": "https://cdn-icons-png.flaticon.com/512/2351/2351904.png" }
+    ]
+  }

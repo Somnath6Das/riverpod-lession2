@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_lesson2/default_setstate.dart';
+import 'package:riverpod_lesson2/future_provider/future_provider1.dart';
 import 'package:riverpod_lesson2/provider/provider1.dart';
 import 'package:riverpod_lesson2/provider/provider2.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_provider1.dart';
+import 'package:riverpod_lesson2/state_notifier_provider/state_notifie1.dart';
 import 'package:riverpod_lesson2/state_provider/state_provider1.dart';
 
 class HomeScreen extends StatelessWidget {
@@ -85,11 +86,24 @@ class HomeScreen extends StatelessWidget {
                   MaterialPageRoute(builder: (context) => const StateNotifier1()),
                 );
               },
-              child: const Text('Default SetState', style: TextStyle(color: Colors.white),),
+              child: const Text('State Notifier1', style: TextStyle(color: Colors.white),),
             ),
             const SizedBox(
               height: 20,
             ),
+         
+            MaterialButton(
+             color: Theme.of(context).primaryColor,
+              textColor: Colors.white,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(20),
+              ),  
+              onPressed: () {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => const FutureProvider1()),
+                );
+              },child: const Text('FutureProvider1'),)
           ],
         ),
       ),
