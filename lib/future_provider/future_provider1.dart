@@ -18,7 +18,7 @@ class FutureProvider1 extends ConsumerWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Api data',
+          'Future Provider',
           style: TextStyle(color: Theme.of(context).colorScheme.primary),
         ),
         backgroundColor: Colors.white,
@@ -29,7 +29,7 @@ class FutureProvider1 extends ConsumerWidget {
                 itemCount: data.length,
                 itemBuilder: (context, index) {
                   return Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
+                    crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       Center(
                           child: ListTile(

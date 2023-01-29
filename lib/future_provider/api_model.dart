@@ -10,6 +10,8 @@ class ApiModel {
 
   factory ApiModel.fromJson(Map<String, dynamic> json) {
     return ApiModel(
-        name: json['name'], age: json['age'], avatar: json['avatar']);
+        name: json['name'],
+        age: json['age'],
+        avatar: json['avatar']);
   }
 }
