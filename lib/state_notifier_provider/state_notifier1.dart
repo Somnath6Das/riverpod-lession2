@@ -1,7 +1,17 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 final counterProvider = StateNotifierProvider.autoDispose<Counter, int>((ref) {
+  // keep alive function keep the state value after auto dispose the provider.
+  final link = ref.keepAlive();
+  // set time period for keep alive value.
+  final timer = Timer(const Duration(seconds: 5), () {
+    link.close();
+  });
+//dispose state value after 5sec.
+  ref.onDispose(() => timer.cancel());
   return Counter();
 });
 
@@ -12,6 +22,7 @@ class Counter extends StateNotifier<int> {
     state += 20;
     // state++;
   }
+
   decrement() {
     // state -= 20;
     state--;

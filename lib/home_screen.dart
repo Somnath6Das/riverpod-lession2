@@ -3,7 +3,7 @@ import 'package:riverpod_lesson2/default_setstate.dart';
 import 'package:riverpod_lesson2/future_provider/future_provider1.dart';
 import 'package:riverpod_lesson2/provider/provider1.dart';
 import 'package:riverpod_lesson2/provider/provider2.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/state_notifie1.dart';
+import 'package:riverpod_lesson2/state_notifier_provider/state_notifier1.dart';
 import 'package:riverpod_lesson2/state_provider/state_provider1.dart';
 import 'package:riverpod_lesson2/stream_provider/stream_provider1.dart';
 
