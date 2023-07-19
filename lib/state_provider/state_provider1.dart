@@ -25,8 +25,8 @@ class StateProvider1 extends ConsumerWidget {
         actions: [
           IconButton(
               onPressed: () {
-                // ref.invalidate(counterProvider);
-                ref.refresh(counterProvider);
+                ref.invalidate(counterProvider);
+                // ref.refresh(counterProvider);
               },
               icon: Icon(
                 Icons.refresh,
@@ -43,9 +43,9 @@ class StateProvider1 extends ConsumerWidget {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           // ref.read(counterProvider.notifier).state += 100 ;
-          // ref.read(counterProvider.notifier).state++;
+          ref.read(counterProvider.notifier).state++;
           // ref.read(counterProvider.notifier).update((state) => state += 200);
-          ref.read(counterProvider.notifier).update((state) => state += 1);
+          // ref.read(counterProvider.notifier).update((state) => state += 1);
         },
         child: const Icon(Icons.add),
       ),

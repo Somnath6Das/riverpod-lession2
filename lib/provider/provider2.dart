@@ -5,6 +5,7 @@ final numProvider = Provider<int>((ref) {
   return 100;
 });
 
+
 class Provider2 extends StatelessWidget {
   const Provider2({super.key});
 
@@ -20,7 +21,14 @@ class Provider2 extends StatelessWidget {
       ),
       body: Consumer(builder: (context, ref, child) {
         final number = ref.watch(numProvider);
-        return Center(child: Text(number.toString()));
+        final number1 = ref.read(numProvider);
+        return Center(child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(number.toString()),
+            Text(number1.toString()),
+          ],
+        ));
       }),
     );
   }
