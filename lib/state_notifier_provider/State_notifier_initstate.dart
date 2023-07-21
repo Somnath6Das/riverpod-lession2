@@ -7,23 +7,22 @@ final counterProvider =
 });
 
 class CounterNotifier extends StateNotifier<Counter> {
-  CounterNotifier() : super(Counter(3, 5));
-
-
+  // integer 3 and String hello is the initial value of two value of veriable 
+  CounterNotifier() : super(Counter(3, 'hello'));
 
   void increment() {
-    state = Counter(state.count + 1, state.count + 2);
+    state = Counter(state.count + 1, state.name = 'Som');
   }
 
   void decrement() {
-    state = Counter(state.count - 1, state.count - 1);
+    state = Counter(state.count - 1, state.name = 'Ok');
   }
 }
 
 class Counter {
   int count;
-  int number;
-  Counter(this.count, this.number);
+  String name;
+  Counter(this.count, this.name);
 }
 
 class StateNotifierInitState extends ConsumerWidget {
@@ -40,7 +39,7 @@ class StateNotifierInitState extends ConsumerWidget {
           
           children: [
             Text(
-              'counter: ${counter.count} ${counter.number}',
+              'counter: ${counter.count} ${counter.name}',
               style: const TextStyle(fontSize: 22),
             ),
             IconButton(
