@@ -16,7 +16,7 @@ class CounterNotifier extends StateNotifier<Counter> {
   }
 
   void decrement() {
-    state = Counter(state.count - 1, state.count - 2);
+    state = Counter(state.count - 1, state.count - 1);
   }
 }
 
