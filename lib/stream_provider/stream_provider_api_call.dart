@@ -6,7 +6,7 @@ import 'package:riverpod_lesson2/future_provider/api_model.dart';
 import 'package:riverpod_lesson2/future_provider/api_service.dart';
 
 final apiProvider = Provider.autoDispose<ApiService>((ref) => ApiService());
-final apiDataProvider = StreamProvider<List<ApiModel>>((ref) async* {
+final apiDataProvider = StreamProvider.autoDispose<List<ApiModel>>((ref) async* {
 // Make the API call here and yield the results
   final response = await http
       .get(Uri.parse("https://somnath6das.github.io/api/future-provider.json"));
