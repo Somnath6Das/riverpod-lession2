@@ -19,7 +19,7 @@ class Counter extends StateNotifier<int> {
   Counter() : super(0);
   increment() {
     //  state = 20;
-    state += 20;
+    state += 1;
     // state++;
   }
 
@@ -46,8 +46,8 @@ class StateNotifier1 extends ConsumerWidget {
         actions: [
           IconButton(
               onPressed: () {
-                // ref.invalidate(counterProvider);
-                ref.refresh(counterProvider);
+                ref.invalidate(counterProvider);
+                // ref.refresh(counterProvider);
               },
               icon: Icon(
                 Icons.refresh,
