@@ -3,9 +3,10 @@ import 'package:riverpod_lesson2/default_setstate.dart';
 import 'package:riverpod_lesson2/future_provider/future_provider1.dart';
 import 'package:riverpod_lesson2/provider/provider1.dart';
 import 'package:riverpod_lesson2/provider/provider2.dart';
-import 'package:riverpod_lesson2/share_pref/share_pref.dart';
+import 'package:riverpod_lesson2/share_pref_set_state/share_pref.dart';
 import 'package:riverpod_lesson2/state_notifier_provider/state_notifier1.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/State_notifier_initstate.dart';
+import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_initstate.dart';
+import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_share_pref.dart';
 import 'package:riverpod_lesson2/state_provider/state_provider1.dart';
 import 'package:riverpod_lesson2/stream_provider/stream_provider1.dart';
 import 'package:riverpod_lesson2/stream_provider/stream_provider_api_call.dart';
@@ -116,6 +117,24 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text(
                   'State Notifier init State',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) =>const StateNotifierSharePref()),
+                  );
+                },
+                child: const Text(
+                  'State Notifier Share Preferance',
                   style: TextStyle(color: Colors.white),
                 ),
               ),

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-final counterProvider =
+final counterProviderInit =
     StateNotifierProvider.autoDispose<CounterNotifier, Counter>((ref) {
   return CounterNotifier();
 });
@@ -30,7 +30,7 @@ class StateNotifierInitState extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(counterProvider);
+    final counter = ref.watch(counterProviderInit);
     return Scaffold(
       appBar: AppBar(title: const Text('State Notifier init state')),
       body: Center(
@@ -39,19 +39,19 @@ class StateNotifierInitState extends ConsumerWidget {
           
           children: [
             Text(
-              'counter: ${counter.count} ${counter.name}',
+              'counter: with Riverpod ${counter.count} ${counter.name}',
               style: const TextStyle(fontSize: 22),
             ),
             IconButton(
                 onPressed: () {
-                  ref.read(counterProvider.notifier).decrement();
+                  ref.read(counterProviderInit.notifier).decrement();
                 },
                 icon: const Icon(Icons.move_to_inbox_sharp)),
           ],
         ),
       ),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => ref.read(counterProvider.notifier).increment(),
+        onPressed: () => ref.read(counterProviderInit.notifier).increment(),
         child: const Icon(Icons.medical_information_rounded),
       ),
     );

@@ -1,9 +1,18 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_lesson2/home_screen.dart';
+import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_share_pref.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
-void main() {
-  runApp(const ProviderScope(child: MyApp()));
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  // this is for  =>   state_notifier_share_pref.dart
+  final SharedPreferences prefs = await SharedPreferences.getInstance();
+  runApp(ProviderScope(
+    // this is for  =>   state_notifier_share_pref.dart
+     overrides: [
+        sharedPreferencesProvider.overrideWithValue(prefs),
+      ],child: const MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -13,11 +22,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData( 
+      theme: ThemeData(
         primarySwatch: Colors.indigo,
       ),
       home: const HomeScreen(),
     );
   }
 }
-
