@@ -1,7 +1,8 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 
 final counterProvider = StateNotifierProvider.autoDispose<Counter, int>((ref) {
   // keep alive function keep the state value after auto dispose the provider.
