@@ -1,15 +1,15 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_lesson2/default_setstate.dart';
-import 'package:riverpod_lesson2/future_provider/future_provider1.dart';
-import 'package:riverpod_lesson2/provider/provider1.dart';
-import 'package:riverpod_lesson2/provider/provider2.dart';
-import 'package:riverpod_lesson2/share_pref_set_state/share_pref.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/state_notifier1.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_initstate.dart';
-import 'package:riverpod_lesson2/state_notifier_provider/state_notifier_share_pref.dart';
-import 'package:riverpod_lesson2/state_provider/state_provider1.dart';
-import 'package:riverpod_lesson2/stream_provider/stream_provider1.dart';
-import 'package:riverpod_lesson2/stream_provider/stream_provider_api_call.dart';
+import 'package:riverpod_lesson2/other_example/default_setstate.dart';
+import 'package:riverpod_lesson2/other_example/future_provider/future_provider1.dart';
+import 'package:riverpod_lesson2/other_example/provider/provider1.dart';
+import 'package:riverpod_lesson2/other_example/provider/provider2.dart';
+import 'package:riverpod_lesson2/other_example/share_pref_set_state/share_pref.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier1.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_initstate.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_share_pref.dart';
+import 'package:riverpod_lesson2/other_example/state_provider/state_provider1.dart';
+import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider1.dart';
+import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider_api_call.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});

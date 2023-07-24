@@ -1,6 +1,6 @@
 import 'dart:convert';
 
-import 'package:riverpod_lesson2/future_provider/api_model.dart';
+import 'package:riverpod_lesson2/other_example/future_provider/api_model.dart';
 import 'package:http/http.dart' as http;
 
 class ApiService {

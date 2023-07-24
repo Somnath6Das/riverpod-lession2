@@ -1,33 +1,29 @@
-import 'dart:convert';
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:http/http.dart' as http;
-import 'package:riverpod_lesson2/future_provider/api_model.dart';
-import 'package:riverpod_lesson2/future_provider/api_service.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+import 'package:riverpod_lesson2/other_example/future_provider/api_model.dart';
+import 'package:riverpod_lesson2/other_example/future_provider/api_service.dart';
 
 final apiProvider = Provider.autoDispose<ApiService>((ref) => ApiService());
-final apiDataProvider = StreamProvider.autoDispose<List<ApiModel>>((ref) async* {
-// Make the API call here and yield the results
-  final response = await http
-      .get(Uri.parse("https://somnath6das.github.io/api/future-provider.json"));
-  if (response.statusCode == 200) {
-    final List data = jsonDecode(response.body)['data']; 
-    yield data.map((e) => ApiModel.fromJson(e)).toList();
-  } else {
-    throw Exception('Failed to load data');
-  }
+
+final userDataProvider = FutureProvider.autoDispose<List<ApiModel>>((ref) {
+  return ref.read(apiProvider).getUsers();
 });
 
-class StreamProviderApiCall extends ConsumerWidget {
-  const StreamProviderApiCall({super.key});
+class FutureProvider1 extends ConsumerWidget {
+  const FutureProvider1({super.key});
+
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final apiData = ref.watch(apiDataProvider);
-    return  Scaffold(
-            appBar: AppBar(
-              title: const Text('API Call with Riverpod'),
-            ),
-            body: apiData.when(
+    final apiData = ref.watch(userDataProvider);
+    return Scaffold(
+      appBar: AppBar(
+        title: Text(
+          'Future Provider',
+          style: TextStyle(color: Theme.of(context).colorScheme.primary),
+        ),
+        backgroundColor: Colors.white,
+      ),
+      body: apiData.when(
           data: (data) {
             return ListView.builder(
                 itemCount: data.length,
@@ -53,6 +49,7 @@ class StreamProviderApiCall extends ConsumerWidget {
               )),
           loading: () {
             return const Center(child: CircularProgressIndicator());
-          }),);
+          }),
+    );
   }
 }
