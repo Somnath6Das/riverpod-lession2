@@ -9,6 +9,7 @@ import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_not
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_initstate.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_share_pref.dart';
 import 'package:riverpod_lesson2/other_example/state_provider/state_provider1.dart';
+import 'package:riverpod_lesson2/other_example/state_provider/state_provider2.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider1.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider_api_call.dart';
 
@@ -146,7 +147,7 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) =>const StateNotifierSharePref()),
+                        builder: (context) => const StateNotifierSharePref()),
                   );
                 },
                 child: const Text(
@@ -171,7 +172,8 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
                 child: const Text('FutureProvider1'),
-              ), const SizedBox(
+              ),
+              const SizedBox(
                 height: 20,
               ),
               ElevatedButton(
@@ -181,7 +183,8 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const StreamProvider1()),
+                    MaterialPageRoute(
+                        builder: (context) => const StreamProvider1()),
                   );
                 },
                 child: const Text('StreamProvider1'),
@@ -193,7 +196,8 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const StreamProviderApiCall()),
+                    MaterialPageRoute(
+                        builder: (context) => const StreamProviderApiCall()),
                   );
                 },
                 child: const Text('StreamProviderApiCall'),
@@ -205,12 +209,25 @@ class HomeScreen extends StatelessWidget {
                 onPressed: () {
                   Navigator.push(
                     context,
-                    MaterialPageRoute(builder: (context) => const SharedPreferencesDemo()),
+                    MaterialPageRoute(
+                        builder: (context) => const SharedPreferencesDemo()),
                   );
                 },
                 child: const Text('Share Preferance'),
               ),
-             
+              ElevatedButton(
+                style: ElevatedButton.styleFrom(
+                    elevation: 2,
+                    backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const TouchDialog()),
+                  );
+                },
+                child: const Text('Show Dialog'),
+              ),
             ],
           ),
         ),
