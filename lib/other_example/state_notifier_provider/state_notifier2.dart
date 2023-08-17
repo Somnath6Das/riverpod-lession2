@@ -19,6 +19,7 @@ class StateNotifier2 extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+   
     return Scaffold(
       body: Center(
         child: Column(

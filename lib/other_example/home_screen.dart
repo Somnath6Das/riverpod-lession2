@@ -6,10 +6,11 @@ import 'package:riverpod_lesson2/other_example/provider/provider2.dart';
 import 'package:riverpod_lesson2/other_example/share_pref_set_state/share_pref.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier1.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier2.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier3.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier4.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_initstate.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_share_pref.dart';
 import 'package:riverpod_lesson2/other_example/state_provider/state_provider1.dart';
-import 'package:riverpod_lesson2/other_example/state_provider/state_provider2.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider1.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider_api_call.dart';
 
@@ -129,6 +130,36 @@ class HomeScreen extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
+                        builder: (context) => const StateNotifier3()),
+                  );
+                },
+                child: const Text(
+                  'State Notifier3',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StateNotifier4()),
+                  );
+                },
+                child: const Text(
+                  'State Notifier4',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
                         builder: (context) => const StateNotifierInitState()),
                   );
                 },
@@ -215,19 +246,7 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text('Share Preferance'),
               ),
-              ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                    elevation: 2,
-                    backgroundColor: Theme.of(context).colorScheme.primary),
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const TouchDialog()),
-                  );
-                },
-                child: const Text('Show Dialog'),
-              ),
+             
             ],
           ),
         ),
