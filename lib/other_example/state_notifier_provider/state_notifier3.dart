@@ -6,6 +6,7 @@ final profileProvider = StateNotifierProvider<ProfileStateNotifier, Profile>(
 
 class ProfileStateNotifier extends StateNotifier<Profile> {
   ProfileStateNotifier(Profile state) : super(state);
+
   void setName(String name) {
     state = state.copyWith(name: name);
   }
@@ -53,6 +54,7 @@ class StateNotifier3 extends ConsumerWidget {
             TextField(
               decoration: const InputDecoration(labelText: "Enter your name"),
               onChanged: (value) {
+                // to change a value of a veriable and other value of veriable remain same.
                 notifier.setName(value);
               },
             ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_lesson2/other_example/change_notifier_provider/change_noti_provider.dart';
 import 'package:riverpod_lesson2/other_example/default_setstate.dart';
 import 'package:riverpod_lesson2/other_example/future_provider/future_provider1.dart';
 import 'package:riverpod_lesson2/other_example/provider/provider1.dart';
@@ -186,6 +187,24 @@ class HomeScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
+              MaterialButton(
+                color: Theme.of(context).primaryColor,
+                textColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangeNotiProvider()),
+                  );
+                },
+                child: const Text('Change Noti Provider'),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -246,7 +265,6 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text('Share Preferance'),
               ),
-             
             ],
           ),
         ),

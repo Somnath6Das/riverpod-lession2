@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
+
 
 final counterProviderInit =
     StateNotifierProvider.autoDispose<CounterNotifier, Counter>((ref) {
@@ -39,11 +40,13 @@ class StateNotifierInitState extends ConsumerWidget {
           
           children: [
             Text(
+              
               'counter: with Riverpod ${counter.count} ${counter.name}',
               style: const TextStyle(fontSize: 22),
             ),
             IconButton(
                 onPressed: () {
+                  // to call whole method for change the value exists on that method
                   ref.read(counterProviderInit.notifier).decrement();
                 },
                 icon: const Icon(Icons.move_to_inbox_sharp)),
