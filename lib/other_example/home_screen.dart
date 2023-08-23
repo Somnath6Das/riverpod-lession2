@@ -9,6 +9,7 @@ import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_not
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier2.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier3.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier4.dart';
+import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier5.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_initstate.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_share_pref.dart';
 import 'package:riverpod_lesson2/other_example/state_provider/state_provider1.dart';
@@ -153,6 +154,25 @@ class HomeScreen extends StatelessWidget {
                   'State Notifier4',
                   style: TextStyle(color: Colors.white),
                 ),
+              ),const SizedBox(
+                height: 20,
+              ),
+              TextButton(
+                style: TextButton.styleFrom(
+                    backgroundColor: Theme.of(context).colorScheme.primary),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StateNotifier5()),
+                  );
+                },
+                child: const Text(
+                  'State Notifier5',
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),const SizedBox(
+                height: 20,
               ),
               TextButton(
                 style: TextButton.styleFrom(
