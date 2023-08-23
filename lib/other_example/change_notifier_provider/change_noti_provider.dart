@@ -38,14 +38,25 @@ class ChangeNotiProvider extends StatelessWidget {
               ),
               ElevatedButton(
                   onPressed: () {
-                    if (data.userName == 'Som') {
-                      changeData.changeUserName();
-                    } else if (data.userName == 'Babu') {
-                      changeData.changeUserDesignation();
+                    //   if (data.userName == 'Som') {
+                    //     changeData.changeUserName();
+                    //   } else if (data.userName == 'Babu') {
+                    //     changeData.changeUserDesignation();
+                    //   }
+                    //   else if (data.userName == 'Programmer') {
+                    //     ref.invalidate(userProvider);
+                    // }
+                    switch (data.userName) {
+                      case 'Som':
+                        return changeData.changeUserName();
+                      case 'Babu':
+                        return changeData.changeUserDesignation();
+                      case 'Programmer':
+                        return ref.invalidate(userProvider);
+                      default:
+                        return ref.invalidate(userProvider);
                     }
-                    else if (data.userName == 'Programmer') {
-                      ref.invalidate(userProvider);
-                  }},
+                  },
                   child: const Text('Change Name'))
             ],
           );
