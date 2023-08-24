@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_lesson2/other_example/change_notifier_provider/change_noti_provider.dart';
+import 'package:riverpod_lesson2/other_example/change_notifier_provider/change_noti_provider2.dart';
 import 'package:riverpod_lesson2/other_example/default_setstate.dart';
 import 'package:riverpod_lesson2/other_example/future_provider/future_provider1.dart';
 import 'package:riverpod_lesson2/other_example/provider/provider1.dart';
@@ -13,6 +14,7 @@ import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_not
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_initstate.dart';
 import 'package:riverpod_lesson2/other_example/state_notifier_provider/state_notifier_share_pref.dart';
 import 'package:riverpod_lesson2/other_example/state_provider/state_provider1.dart';
+import 'package:riverpod_lesson2/other_example/state_provider/state_provider2.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider1.dart';
 import 'package:riverpod_lesson2/other_example/stream_provider/stream_provider_api_call.dart';
 
@@ -92,6 +94,21 @@ class HomeScreen extends StatelessWidget {
                 },
                 child: const Text('StateProvider1'),
               ),
+              OutlinedButton(
+                style: OutlinedButton.styleFrom(
+                  shape: const StadiumBorder(),
+                  side: BorderSide(
+                      width: 2, color: Theme.of(context).colorScheme.primary),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const StateProvider2()),
+                  );
+                },
+                child: const Text('StateProvider2'),
+              ),
               const SizedBox(
                 height: 20,
               ),
@@ -154,7 +171,8 @@ class HomeScreen extends StatelessWidget {
                   'State Notifier4',
                   style: TextStyle(color: Colors.white),
                 ),
-              ),const SizedBox(
+              ),
+              const SizedBox(
                 height: 20,
               ),
               TextButton(
@@ -171,7 +189,8 @@ class HomeScreen extends StatelessWidget {
                   'State Notifier5',
                   style: TextStyle(color: Colors.white),
                 ),
-              ),const SizedBox(
+              ),
+              const SizedBox(
                 height: 20,
               ),
               TextButton(
@@ -221,6 +240,21 @@ class HomeScreen extends StatelessWidget {
                   );
                 },
                 child: const Text('Change Noti Provider'),
+              ),
+              MaterialButton(
+                color: Theme.of(context).primaryColor,
+                textColor: Colors.white,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(20),
+                ),
+                onPressed: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ChangeNotiProvider2()),
+                  );
+                },
+                child: const Text('Change Noti Provider 2'),
               ),
               const SizedBox(
                 height: 20,
